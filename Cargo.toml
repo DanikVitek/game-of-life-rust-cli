@@ -5,6 +5,12 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[profile.release]
+lto = true
+opt-level = 3
+codegen-units = 1
+strip = true
+
 [dependencies]
 clap = { version = "4.1", features = ["color", "help", "usage", "std", "derive"] }
 crossterm = { version = "0.25", default-features = false }
